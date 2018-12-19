@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 bullet1.y -= 1;
                 bullet1.move();
             }, 30);
+            if (this.x === bullet1.x && this.y === bullet1.y) {
+            }
         }
     }
 

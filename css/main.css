@@ -42,3 +42,24 @@
     position: absolute;
     transform: translate(-50%, -50%);
 }
+
+#heart {
+    width: 30px;
+}
+
+#life-bar {
+    width: 200px;
+    height: 20px;
+    background: #a63838;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px gainsboro;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+#life-bar-monster {
+    width: 30px;
+}
