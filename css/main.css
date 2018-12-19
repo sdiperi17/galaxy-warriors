@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#home-background {
+    background-image: url("../images/star3.jpg");
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#play-background {
+    background-image: url("../images/galaxy-giffy\ \(1\).gif");
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#ship img {
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50% 0);
+}
+
+.monster img {
+    width: 150px;
+}
