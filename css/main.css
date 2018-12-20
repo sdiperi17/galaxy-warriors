@@ -4,7 +4,7 @@
 }
 
 #home-background {
-    background-image: url("../images/star3.jpg");
+    background-image: url("../images/stars1.jpg");
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -20,6 +20,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 #ship {
@@ -27,7 +28,7 @@
     position: absolute;
     z-index: 1;
     transform: translate(-50%, -50%);
-    transition: all 1s linear;
+    transition: all 0.3s linear;
 }
 
 #monster {
@@ -48,8 +49,8 @@
 }
 
 #life-bar {
-    width: 200px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
     background: #a63838;
     border-radius: 20px;
     box-shadow: 1px 1px 1px gainsboro;
@@ -59,7 +60,84 @@
     display: flex;
     align-items: center;
 }
+.row {
+    display: flex;
+}
 
-#life-bar-monster {
+#enemy {
     width: 30px;
+}
+
+.life-bar-container {
+    width: 200px;
+    height: 25px;
+    background: white;
+    border-radius: 20px;
+    border: 5px solid blue;
+}
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.logo {
+    width: 400px;
+    margin: 50px auto;
+}
+
+.ships img {
+    width: 200px;
+    padding: 50px;
+}
+
+.flex-row img:hover {
+    transform: scale(1.3, 1.3);
+    transition: 0.3s all linear;
+}
+
+.choose {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    font-family: "Orbitron", sans-serif;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-box {
+    width: 50%;
+    background: black;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-box img {
+    width: 30%;
+    border-radius: 50%;
+}
+
+#play {
+    width: 80px;
+    height: 25px;
+    border-radius: 20%;
+    margin: 0 auto;
+    display: block;
+    font-size: 1rem;
+}
+
+#back-button {
+    position: relative;
+    width: 60px;
+    height: 25px;
+    border-radius: 20%;
+    left: 0;
 }

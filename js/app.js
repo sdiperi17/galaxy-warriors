@@ -16,10 +16,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             this.element.style.top = `${y}%`;
         }
 
-        move() {
+        move(timeOutId) {
             this.element.style.top = `${this.y}%`;
-            if (this.y < 20) {
+            if (this.y < 0) {
                 this.element.remove();
+                clearInterval(timeOutId);
             }
         }
     }
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             this.element = document.querySelector(`#${id}`);
             this.x = x;
             this.y = y;
+            this.health = 100;
             this.init();
         }
 
@@ -58,14 +60,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         }
 
-        fireBullet() {
+        fireBullet(monster) {
             let bullet1 = new Bullet(this.x, this.y, 1);
-            setInterval(() => {
+            let shoot = setInterval(() => {
                 bullet1.y -= 1;
-                bullet1.move();
-            }, 30);
-            if (this.x === bullet1.x && this.y === bullet1.y) {
-            }
+                bullet1.move(shoot);
+                console.log(monster.x);
+                console.log("bullet" + bullet1.x);
+                if (monster.x + 10 > bullet1.x && monster.x - 10 < bullet1.x) {
+                    let monsterLifeBar = document.querySelector("#life-bar");
+                    monster.health -= 50;
+                    monsterLifeBar.style.width = `${monster.health}%`;
+                    bullet1.element.remove();
+                    if (monster.health === 0) {
+                        monster.element.src = "../images/explode-kill.gif";
+                        setTimeout(() => {
+                            monster.element.style.opacity = "0";
+                        }, 2000);
+                        let modalBox = document.querySelector(".modal-box");
+                        modalBox.style.display = "block";
+                    }
+                    clearInterval(shoot);
+                    console.log("shot");
+                }
+            });
         }
     }
 
@@ -76,14 +94,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
         moveAcrossX() {
             setInterval(() => {
-                this.element.style.left = `${Math.floor(Math.random() * 100)}%`;
+                let randomPostion = Math.floor(Math.random() * 100);
+                this.element.style.left = `${randomPostion}%`;
+                this.x = randomPostion;
             }, 2000);
         }
     }
 
     // created a ship object
-    let ship = new SpaceShip("ship", 50, 85);
-    let monster = new Enemy("monster", 50, 17);
+    let ship = new SpaceShip("ship", 50, 90);
+    let monster = new Enemy("monster", 50, 25);
+    console.log(monster);
 
     document.addEventListener("keydown", e => {
         let { keyCode } = e;
@@ -100,7 +121,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             // right arrow
             ship.moveRight();
         } else if (keyCode == "32") {
-            ship.fireBullet();
+            ship.fireBullet(monster);
         }
     });
+
+    let playBtn = document.querySelector("#play");
+    playBtn.addEventListener("click", () => {});
 });
