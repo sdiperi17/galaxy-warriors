@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
+    let shipSrc = window.localStorage.getItem("selectedShip");
     class Bullet {
         constructor(x, y, num) {
             this.x = x;
@@ -103,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // created a ship object
     let ship = new SpaceShip("ship", 50, 90);
+    ship.element.src = shipSrc;
     let monster = new Enemy("monster", 50, 25);
     console.log(monster);
 
@@ -124,7 +126,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
             ship.fireBullet(monster);
         }
     });
-
-    let playBtn = document.querySelector("#play");
-    playBtn.addEventListener("click", () => {});
 });
