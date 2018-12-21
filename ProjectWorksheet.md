@@ -1,3 +1,5 @@
+Link to the game: https://pages.git.generalassemb.ly/sdiperi17/galaxy-warriors/pages/play.html
+
 # Project Overview
 
 ## Project Schedule
@@ -137,17 +139,39 @@ function reverse(string) {
 }
 ```
 
+1. This function uses js classes to generate bullet and increments its y coordinate to move it along the page.
+   The function also has if condition where collision of bullet and enemy is detected to decrement the life bar of the enemy
+
 fireBullet(monster) {
-//
+let bullet1 = new Bullet(this.x, this.y, 1);
+let shoot = setInterval(() => {
+bullet1.y -= 1;
+bullet1.move(shoot);
+console.log(monster.x);
+console.log("bullet" + bullet1.x);
+if (monster.x + 5 > bullet1.x && monster.x - 5 < bullet1.x) {
+let monsterLifeBar = document.querySelector("#life-bar");
+monster.health -= 10;
+}
+}, 10);
+}
 }
 
-throwBomb() {}
+2. Used the setItem() method of the Storage to set the value of the specified Storage Object item.
+
+window.localStorage.setItem("selectedShip", this.src);
 
 ## Change Log
 
 Use this section to document what changes were made and the reasoning behind those changes.
 
 ## Issues and Resolutions
+
+Issue: repeating code while creating objects for game characters.
+Resolution: As the enemy and spaceship had a lot of properties in common, using js classes with consructor helped to dry the code and make the code more organized
+
+Issue: To add feature for user to be able to select spaceship on landing page and to play with selected ship on play page.
+Resolution: local storage - web storage to store data.
 
 Use this section to list of all major issues encountered and their resolution.
 
