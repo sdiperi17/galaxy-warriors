@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             this.x = x;
             this.y = y;
             let bomb = document.createElement("img");
-            bomb.src = "images/bomb3.gif";
+            bomb.src = "../images/bomb3.gif";
             bomb.id = `bomb${num}`;
             bomb.className = "bombs";
             document.querySelector("#play-background").appendChild(bomb);
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         move(timeOutId) {
             this.element.style.top = `${this.y}%`;
-            if (this.y > 200) {
+            if (this.y > 180) {
                 this.element.remove();
                 // clearInterval(timeOutId);
             }
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                 }, 50);
-            }, 2000);
+            }, 1000);
         }
     }
 
