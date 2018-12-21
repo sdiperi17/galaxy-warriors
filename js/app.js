@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             this.x = x;
             this.y = y;
             let bomb = document.createElement("img");
-            bomb.src = "/images/bomb3.gif";
+            bomb.src = "images/bomb3.gif";
             bomb.id = `bomb${num}`;
             bomb.className = "bombs";
             document.querySelector("#play-background").appendChild(bomb);
