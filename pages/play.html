@@ -10,19 +10,38 @@
     <body>
         <div id="play-background">
             <div class="top-container">
-                <div class="flex-row">
-                    <div>
-                        <img
-                            id="enemy"
-                            src="../images/wow-fighter-2.gif"
-                            alt="enemy"
-                        />
+                <div>
+                    <div class="flex-row">
+                        <div>
+                            <img
+                                id="enemy"
+                                src="../images/wow-fighter-2.gif"
+                                alt="enemy"
+                            />
+                        </div>
+                        <div>
+                            <img
+                                id="heart"
+                                src="../images/heart.gif"
+                                alt="heart"
+                            />
+                        </div>
+                        <div class="life-bar-container">
+                            <div id="life-bar"></div>
+                        </div>
                     </div>
+                </div>
+                <div class="flex-row">
+                    <img
+                        id="ship-on-bar"
+                        src="../images/ship-gif1.gif"
+                        alt=""
+                    />
                     <div>
                         <img id="heart" src="../images/heart.gif" alt="heart" />
                     </div>
                     <div class="life-bar-container">
-                        <div id="life-bar"></div>
+                        <div id="life-bar-ship"></div>
                     </div>
                 </div>
                 <a href="../index.html"
@@ -33,10 +52,14 @@
             <img id="ship" src="../images/spaceship.1.png" alt="" />
 
             <div class="modal-box">
-                <img src="../images/You-Win.png" alt="" />
-                <div>
-                    <button id="play-again">Play Again</button>
-                    <button id="main-menu">Main Menu</button>
+                <img class="modal-img" src="../images/You-Win.png" alt="" />
+                <div class="button-container">
+                    <a href="play.html"
+                        ><button id="play-again">Play Again</button>
+                    </a>
+                    <a href="../index.html"
+                        ><button id="main-menu">Main Menu</button>
+                    </a>
                 </div>
             </div>
         </div>

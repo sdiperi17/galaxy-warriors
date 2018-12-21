@@ -112,18 +112,34 @@
 }
 
 .modal-box {
-    width: 50%;
-    background: black;
+    background: white;
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    background: orange;
 }
 
 .modal-box img {
-    width: 30%;
-    border-radius: 50%;
+    width: 100%;
+}
+
+#play-again,
+#main-menu {
+    width: 80px;
+    height: 30px;
+    border-radius: 10%;
+    background: white;
+    border: 1px solid #a63838;
+}
+
+#play-again:hover,
+#play:hover,
+#main-menu:hover,
+#back-button:hover {
+    background: #ff5733;
 }
 
 #play {
@@ -146,4 +162,23 @@
 .selected-ship {
     border: 3px solid blue;
     box-shadow: 3px 3px 3px solid;
+}
+
+.bombs {
+    width: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: all 1s linear;
+}
+
+#ship-on-bar {
+    width: 40px;
+}
+
+#life-bar-ship {
+    width: 100%;
+    height: 100%;
+    background: #a63838;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px gainsboro;
 }
