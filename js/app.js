@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             this.x = x;
             this.y = y;
             let bullet = document.createElement("img");
-            bullet.src = "/images/bullet.png";
+            bullet.src = "../images/bullet.png";
             bullet.id = `bullet${num}`;
             bullet.className = "bullets";
             document.querySelector("#play-background").appendChild(bullet);
@@ -106,8 +106,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         }, 2000);
                         let modalBox = document.querySelector(".modal-box");
                         modalBox.style.display = "block";
+
                         let modalImg = document.querySelector(".modal-img");
-                        modalImg.src = "/images/You-Win.png";
+                        modalImg.src = "../images/You-Win.png";
                     }
                     clearInterval(shoot);
                     console.log("shot");
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         ship.y === bomb1.y
                     ) {
                         let shipLife = document.querySelector("#life-bar-ship");
-                        ship.health -= 10;
+                        ship.health -= 5;
                         shipLife.style.width = `${ship.health}%`;
                         bomb1.element.remove();
                         let modalImg = document.querySelector(".modal-img");
@@ -150,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             setTimeout(() => {}, 2000);
                             let modalBox = document.querySelector(".modal-box");
                             modalBox.style.display = "block";
-                            modalImg.src = "/images/GameOver.jpg";
+                            modalImg.src = "../images/game-over.png";
                         }
                     }
                 }, 50);
